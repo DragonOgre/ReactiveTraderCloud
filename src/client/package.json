@@ -80,7 +80,6 @@
     "react-sizeme": "2.3.6",
     "react-split-pane": "0.1.77",
     "redux": "4.0.0",
-    "redux-actions": "2.3.2",
     "redux-observable": "1.0.0-alpha.3",
     "reselect": "3.0.1",
     "rxjs": "6.1.0",
@@ -89,7 +88,6 @@
     "ws": "0.8.1"
   },
   "devDependencies": {
-    "@types/redux-actions": "^2.3.0",
     "@types/autobahn": "^0.9.38",
     "@types/enzyme": "^3.1.10",
     "@types/enzyme-adapter-react-16": "^1.0.2",
