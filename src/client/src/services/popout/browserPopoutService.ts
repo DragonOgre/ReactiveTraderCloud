@@ -1,5 +1,5 @@
-import * as _ from 'lodash'
-import * as ReactDOM from 'react-dom'
+import _ from 'lodash'
+import ReactDOM from 'react-dom'
 import { logger } from '../../system'
 import PopoutServiceBase from './popoutServiceBase'
 import { PopoutOptions, PopoutView } from './types'

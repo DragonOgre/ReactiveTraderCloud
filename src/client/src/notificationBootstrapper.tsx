@@ -1,5 +1,5 @@
-import * as React from 'react'
-import * as ReactDOM from 'react-dom'
+import React from 'react'
+import ReactDOM from 'react-dom'
 import TradeNotification from './ui/notification/TradeNotification'
 
 declare const window: any
@@ -10,10 +10,7 @@ function dismissNotification() {
 
 function handleNotificationMessage(message) {
   ReactDOM.render(
-    <TradeNotification
-      message={message}
-      dismissNotification={dismissNotification}
-    />,
+    <TradeNotification message={message} dismissNotification={dismissNotification} />,
     document.getElementById('root')
   )
 

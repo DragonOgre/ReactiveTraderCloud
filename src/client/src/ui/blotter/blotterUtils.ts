@@ -1,5 +1,5 @@
-import * as AgGrid from 'ag-grid'
-import * as numeral from 'numeral'
+import AgGrid from 'ag-grid'
+import numeral from 'numeral'
 import { Trade, TradeStatus } from '../../types'
 import { formatDate, UtcFormatDate } from '../spotTile/notional/utils'
 import './filters/filterOverrides.ts'

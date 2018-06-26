@@ -1,5 +1,5 @@
-import * as _ from 'lodash'
-import * as React from 'react'
+import _ from 'lodash'
+import React from 'react'
 import { CurrencyPair } from '../../../types/currencyPair'
 import PNLBar from './PNLBar'
 
@@ -9,10 +9,7 @@ export interface AnalyticsBarChartProps {
   isPnL: boolean
 }
 
-export default class AnalyticsBarChart extends React.Component<
-  AnalyticsBarChartProps,
-  {}
-> {
+export default class AnalyticsBarChart extends React.Component<AnalyticsBarChartProps, {}> {
   render() {
     return <div>{!_.isEmpty(this.props.chartData) && this.createBars()}</div>
   }

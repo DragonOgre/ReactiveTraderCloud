@@ -1,11 +1,11 @@
-import * as React from 'react'
+import React from 'react'
 import { BlotterContainer } from '../blotter'
 import FooterContainer from '../footer/FooterContainer'
 import { Modal } from '../modal'
 import SidebarRegionContainer from '../sidebar'
 import { WorkspaceContainer } from '../workspace/'
 
-import * as classnames from 'classnames'
+import classnames from 'classnames'
 import { connect } from 'react-redux'
 import SplitPane from 'react-split-pane'
 import { Dispatch } from 'redux'

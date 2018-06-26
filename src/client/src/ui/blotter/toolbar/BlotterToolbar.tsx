@@ -1,5 +1,5 @@
-import * as AgGrid from 'ag-grid'
-import * as React from 'react'
+import AgGrid from 'ag-grid'
+import React from 'react'
 import AppliedFilters from './AppliedFilters'
 import QuickFilter from './QuickFilter'
 
@@ -17,10 +17,7 @@ interface BlotterToobarState {
   themeName: string
 }
 
-export default class BlotterToolbar extends React.Component<
-  BlotterToolbarProps,
-  BlotterToobarState
-> {
+export default class BlotterToolbar extends React.Component<BlotterToolbarProps, BlotterToobarState> {
   render() {
     return (
       <div className="blotter-toolbar">

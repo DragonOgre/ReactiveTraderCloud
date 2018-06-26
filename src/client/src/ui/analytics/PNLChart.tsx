@@ -1,11 +1,11 @@
 /* tslint:disable */
-import * as React from 'react'
-import * as ReactDOM from 'react-dom'
-import * as classnames from 'classnames'
+import React from 'react'
+import ReactDOM from 'react-dom'
+import classnames from 'classnames'
 // tslint:disable-next-line:noImplicitAny
-import * as NVD3Chart from 'react-nvd3'
+import NVD3Chart from 'react-nvd3'
 import { timeFormat } from 'd3-time-format'
-import * as numeral from 'numeral'
+import numeral from 'numeral'
 
 import ChartGradient from './chartGradient'
 
@@ -61,11 +61,7 @@ export default class PNLChart extends React.Component<PNLChartProps, {}> {
       }
       const chartDomElement = ReactDOM.findDOMNode(this.refs.pnlChart)
       if (chartDomElement) {
-        this.chartGradient.update(
-          chartDomElement as Element,
-          this.props.minPnl,
-          this.props.maxPnl
-        )
+        this.chartGradient.update(chartDomElement as Element, this.props.minPnl, this.props.maxPnl)
       }
     }
   }
@@ -133,9 +129,7 @@ export default class PNLChart extends React.Component<PNLChartProps, {}> {
             <i className="analytics__header-title-icon glyphicon glyphicon-stats" />
             Profit &amp; Loss
           </span>
-          <span className={analyticsHeaderClassName}>
-            USD {formattedLastPos}
-          </span>
+          <span className={analyticsHeaderClassName}>USD {formattedLastPos}</span>
         </div>
         <div className="analytics__chart-container">{pnlChart}</div>
       </div>

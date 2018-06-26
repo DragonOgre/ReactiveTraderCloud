@@ -1,6 +1,6 @@
-import * as _ from 'lodash'
-import * as PropTypes from 'prop-types'
-import * as React from 'react'
+import _ from 'lodash'
+import PropTypes from 'prop-types'
+import React from 'react'
 import { connect } from 'react-redux'
 import { CurrencyPair, Trade, TradeStatus } from '../../types'
 
@@ -10,24 +10,14 @@ interface TradeNotificationContainerProps {
   trades: Trade[]
 }
 
-class TradeNotification extends React.Component<
-  TradeNotificationContainerProps,
-  {}
-> {
+class TradeNotification extends React.Component<TradeNotificationContainerProps, {}> {
   static contextTypes = {
     openFin: PropTypes.object
   }
 
   public componentWillReceiveProps(newProps) {
-    if (
-      this.context.openFin &&
-      this.props.trades &&
-      Object.keys(this.props.trades).length
-    ) {
-      this.showOpenFinNotificationsForNewTrades(
-        this.props.trades,
-        newProps.trades
-      )
+    if (this.context.openFin && this.props.trades && Object.keys(this.props.trades).length) {
+      this.showOpenFinNotificationsForNewTrades(this.props.trades, newProps.trades)
     }
     return newProps
   }
@@ -35,22 +25,13 @@ class TradeNotification extends React.Component<
   public showOpenFinNotificationsForNewTrades(previousTrades, payloadTrades) {
     _.forEach(payloadTrades, (trade: Trade) => {
       // ignore existing trades, unless it was pending
-      if (
-        previousTrades[trade.tradeId] &&
-        previousTrades[trade.tradeId].status !== TradeStatus.Pending
-      ) {
+      if (previousTrades[trade.tradeId] && previousTrades[trade.tradeId].status !== TradeStatus.Pending) {
         return
       }
 
       // display a notification if the trade has a final status (Done or Rejected)
-      if (
-        trade.status === TradeStatus.Done ||
-        trade.status === TradeStatus.Rejected
-      ) {
-        this.context.openFin.openTradeNotification(
-          trade,
-          this.props.currencyPairs[trade.symbol]
-        )
+      if (trade.status === TradeStatus.Done || trade.status === TradeStatus.Rejected) {
+        this.context.openFin.openTradeNotification(trade, this.props.currencyPairs[trade.symbol])
       }
     })
   }

@@ -1,5 +1,5 @@
-import * as classnames from 'classnames'
-import * as React from 'react'
+import classnames from 'classnames'
+import React from 'react'
 
 import { PriceMovementTypes } from '../../types'
 
@@ -22,14 +22,8 @@ const getCaretDirection = (priceMovement: string) => {
   }
 
   return {
-    up: classnames(
-      'price-movement__icon--up fa fa-lg',
-      upDirectionClasses[priceMovement]
-    ),
-    down: classnames(
-      'price-movement__icon--down fa fa-lg',
-      downDirectionClasses[priceMovement]
-    )
+    up: classnames('price-movement__icon--up fa fa-lg', upDirectionClasses[priceMovement]),
+    down: classnames('price-movement__icon--down fa fa-lg', downDirectionClasses[priceMovement])
   }
 }
 

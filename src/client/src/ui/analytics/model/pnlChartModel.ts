@@ -1,6 +1,6 @@
 import { time } from 'd3'
-import * as _ from 'lodash'
-import * as numeral from 'numeral'
+import _ from 'lodash'
+import numeral from 'numeral'
 
 import { PnlChartModelOptions } from '../PNLChart'
 
@@ -54,9 +54,7 @@ const getLimit = (values: number[], callback) => {
 }
 
 export const getPnlPositions = (positions = []) => {
-  const allPricePoints: number[] = positions
-    .filter(item => !_.isNull(item.usdPnl))
-    .map(item => item.usdPnl.toFixed(2))
+  const allPricePoints: number[] = positions.filter(item => !_.isNull(item.usdPnl)).map(item => item.usdPnl.toFixed(2))
 
   const seriesData: PricePoint[] = positions
     .filter(item => !_.isNull(item.usdPnl))

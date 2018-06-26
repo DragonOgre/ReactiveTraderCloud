@@ -1,5 +1,5 @@
-import * as moment from 'moment'
-import * as numeral from 'numeral'
+import moment from 'moment'
+import numeral from 'numeral'
 import { Observable } from 'rxjs'
 import PositionsMapper from '../mappers/positionsMapper'
 
